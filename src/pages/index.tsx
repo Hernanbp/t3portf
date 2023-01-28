@@ -44,7 +44,7 @@ const Home: NextPage = () => {
                     <BsTwitter size=".9rem" />
                   </li>
                 </ul>
-                <div className="flex w-1/2 justify-between rounded-full bg-black p-1 px-3 text-xs text-white">
+                <div className="flex w-1/2 justify-between rounded-full bg-black p-1 px-3 text-xs font-normal text-white">
                   <HiOutlineMail size="1rem" />
                   hernanbp.hb@gmail.com
                 </div>
