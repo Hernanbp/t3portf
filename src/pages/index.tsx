@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <motion.section className="flex h-5/6 flex-col-reverse gap-2 lg:flex-row ">
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
+          initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut", delay: 0.6 }}
           className=" flex h-full  w-full flex-col justify-between rounded-4xl bg-black p-6 lg:w-1/2"
@@ -30,19 +30,19 @@ const Home: NextPage = () => {
             <p className="text-sm text-white">Wednesday 14th</p>
           </div>
         </motion.div>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeInOut", delay: 0.9 }}
-          className="relative flex h-2/5 w-full flex-col  justify-center  gap-2 overflow-hidden rounded-4xl lg:h-full lg:w-1/2"
-        >
+        <div className="relative flex h-2/5 w-full flex-col  justify-center  gap-2 overflow-hidden rounded-4xl lg:h-full lg:w-1/2">
           {/* <Image
             src={"/t1.png"}
             alt="Picture of the author"
             fill
             style={{ objectFit: "cover" }}
           /> */}
-          <div className="flex h-1/2 flex-col justify-between rounded-4xl bg-ml p-6">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.9 }}
+            className="flex h-1/2 flex-col justify-between rounded-4xl bg-ml p-6"
+          >
             <div>
               <h1 className="text-3xl font-black leading-none tracking-tight">
                 Mercadolibre
@@ -57,9 +57,14 @@ const Home: NextPage = () => {
                 Github Repo
               </p>
             </div>
-          </div>
-          <div className="h-1/2 rounded-4xl bg-violet-500"></div>
-        </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 1.2 }}
+            className="h-1/2 rounded-4xl bg-violet-500"
+          ></motion.div>
+        </div>
       </motion.section>
     </>
   );
