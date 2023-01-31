@@ -4,18 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-base": "#0F0F0F",
-        "green-base": "#12FF71",
+        ml: "#FFF159",
       },
       borderRadius: {
         "4xl": "2rem",
       },
       fontSize: {
         xsm: "0.9375rem",
+        "4.5xl": "2.5rem",
       },
     },
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
+      sans: ["Space_Grotesk", "sans-serif"],
     },
   },
   plugins: [],
