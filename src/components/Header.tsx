@@ -19,9 +19,14 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: 50, opacity: 0 }}
+      initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+      transition={{
+        type: "spring",
+        stiffness: 30,
+        damping: 15,
+        mass: 0.5,
+      }}
       className="flex flex-col  items-center justify-between  rounded-4xl border-2 border-black text-black "
     >
       <nav className="h-16 w-full rounded-4xl">
