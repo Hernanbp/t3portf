@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -17,7 +18,12 @@ const Header = () => {
   }, [route]);
 
   return (
-    <header className="flex flex-col  items-center justify-between  rounded-4xl border-2 border-black text-black ">
+    <motion.header
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+      className="flex flex-col  items-center justify-between  rounded-4xl border-2 border-black text-black "
+    >
       <nav className="h-16 w-full rounded-4xl">
         <ul className="flex h-full cursor-pointer  text-xsm font-bold">
           <Link
@@ -69,7 +75,7 @@ const Header = () => {
           Hernan B.P. - Design & Code
         </h1>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
