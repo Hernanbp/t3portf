@@ -8,13 +8,14 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   const [active, setActive] = useState(false);
+  const [active2, setActive2] = useState(false);
 
   const route = useRouter().pathname;
 
   useEffect(() => {
-    if (route === "/") {
-      setActive(true);
-    }
+    //  if route equal to / then setActive(true) else setActive(false)
+    route === "/" ? setActive(true) : setActive(false);
+    route === "/projects" ? setActive2(true) : setActive2(false);
   }, [route]);
 
   return (
@@ -23,7 +24,7 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{
         type: "spring",
-        stiffness: 30,
+        stiffness: 50,
         damping: 15,
         mass: 0.5,
       }}
@@ -41,7 +42,7 @@ const Header = () => {
               {/* cambiar a w-0 */}
               <span
                 className={`absolute bottom-0 left-0 h-2 ${
-                  active ? "w-full" : 0
+                  active ? "w-full" : "w-0"
                 }  bg-black duration-300 ease-in-out group-hover:w-full group-hover:transition-all`}
               ></span>
             </li>
@@ -53,7 +54,11 @@ const Header = () => {
             <li className="grid-row-2 grid px-2">
               Projects
               <p className="justify-self-end px-2">02</p>
-              <span className="absolute bottom-0 left-0 h-2 w-0 bg-black duration-300 ease-in-out group-hover:w-full group-hover:transition-all"></span>
+              <span
+                className={`absolute bottom-0 left-0 h-2 ${
+                  active2 ? "w-full" : "w-0"
+                }  bg-black duration-300 ease-in-out group-hover:w-full group-hover:transition-all`}
+              ></span>
             </li>
           </Link>
           <li className="hidden items-center p-4 lg:flex lg:w-full lg:rounded-tr-4xl lg:border-b-2 lg:border-black">
@@ -61,11 +66,17 @@ const Header = () => {
               <li className="flex h-8 w-8 items-center justify-center rounded-full bg-black p-2  text-white hover:bg-gray-800">
                 <FaLinkedinIn size="1rem" />
               </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded-full bg-black p-2  text-white hover:bg-gray-800">
-                <BsGithub size="1rem" />
+              <li className="group flex h-8 w-8 items-center justify-center rounded-full border border-gray-300  text-white transition-all duration-100 ease-in-out hover:border-black hover:bg-black">
+                <BsGithub
+                  className="text-black  group-hover:text-white"
+                  size="1rem"
+                />
               </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded-full bg-black p-2  text-white hover:bg-gray-800">
-                <BsTwitter size="1rem" />
+              <li className="group flex h-8 w-8 items-center justify-center rounded-full border border-gray-300  text-white transition-all duration-100 ease-in-out hover:border-black hover:bg-black">
+                <BsTwitter
+                  className="text-black  group-hover:text-white"
+                  size="1rem"
+                />
               </li>
             </ul>
             <div className="flex h-8 w-1/3 items-center justify-between  rounded-full bg-black p-1 px-3 text-xs font-normal text-white">

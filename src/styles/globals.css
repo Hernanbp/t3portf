@@ -5,3 +5,7 @@
 ::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
+
+html {
+  background: hsl(0, 0%, 92%);
+}
